@@ -3,53 +3,58 @@
   display: flex;
 }
 
-.example-card{
-    margin-top: 4px;
+.example-card {
+  margin-top: 4px;
 }
 
-.example-header-image { 
-    display: flex;
+.example-header-image {
   background-size: cover;
 }
 
-.title{
-    font-weight: bold;
+.title {
+  font-weight: bold;
 }
 
-.img-article{
-    height: 350px;
+.img-article {
+  height: auto;
+  display: block;
+  align-content: center;
 }
 
-.action-buttons{
-    text-align: center;
+.action-buttons {
+  text-align: center;
 }
-    
+
 .example-container {
-    margin: auto;
-    flex-flow: column wrap;
-    width: 100%;
-    height: auto;
-    border: 1px solid rgba(111, 111, 111, 0.50);
+  flex-flow: column wrap;
+  width: 100%;
+  height: auto;
+  margin: 64dp;
+  border: 1px solid rgba(111, 111, 111, 0.50);
 }
-  
+
 .example-sidenav-content {
-    display: flex;
-    height: 75%;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  height: 75%;
+  align-items: center;
+  justify-content: center;
 }
-  
+
 .example-sidenav {
-    display: flex;
-    padding: 20px;
+  display: flex;
+  padding: 20px;
 }
 
 .source-name {
-    margin-left:5px; 
+  margin-left: 5px;
 }
 
-.list-item:hover{
-    cursor: pointer;
-    background-color: #3f51b5;
-    color: white;
+.list-item:hover {
+  cursor: pointer;
+  background-color: #3f51b5;
+  color: white;
+}
+
+.host:deep {
+margin: 64dp;
 }

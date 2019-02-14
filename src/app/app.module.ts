@@ -6,7 +6,7 @@ import { NewsApiService } from './news-api.service';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule,
-     MatIconModule, MatSidenavModule, MatListModule } from '@angular/material';
+     MatIconModule, MatSidenavModule, MatListModule, MatFormFieldModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 
@@ -25,6 +25,7 @@ import { AppComponent } from './app.component';
     MatIconModule,
     MatSidenavModule,
     MatListModule,
+    MatFormFieldModule,
   ],
   providers: [NewsApiService],
   bootstrap: [AppComponent]

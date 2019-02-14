@@ -1,9 +1,16 @@
-<mat-toolbar color="primary">
-  <button mat-button (click)="sidenav.open ()" (auxclick)="sidenav.close()">
+<mat-toolbar class="host" color="primary">
+  <button mat-button (click)="sidenav.toggle()" (dblclick)="ngOnInit()">
     <mat-icon>menu</mat-icon>
   </button>
   <span>News Headlines</span>
   <span class="example-spacer"></span>
+  <input matInput #input placeholder="">
+  <button mat-button (click)="searchArticlesByWord(input.value)">
+    <mat-icon>search</mat-icon>
+  </button>
+  <button mat-button [matMenuTriggerFor]="appMenuSort" (dblclick)="ngOnInit()">
+    <mat-icon>sort</mat-icon>sort
+  </button>
   <button mat-button [matMenuTriggerFor]="appMenu">
     <mat-icon>settings</mat-icon>
   </button>
@@ -12,12 +19,15 @@
   <button mat-menu-item> Settings </button>
   <button mat-menu-item> Help </button>
 </mat-menu>
+<mat-menu #appMenuSort="matMenu">
+  <button mat-menu-item (click)="searchArticlesPopular()"> Sort by popularity </button>
+  <button mat-menu-item (click)="searchArticlesDate()"> Sort by date </button>
+</mat-menu>
 <mat-sidenav-container class="example-container">
-
   <mat-sidenav #sidenav class="example-sidenav">
     <mat-list class="list-nav">
       <mat-list-item class="list-item" *ngFor="let source of mSources" (click)="searchArticles(source.id);sidenav.close();">
-        <div mat-card-avatar [ngStyle]="{'background-image': 'url(.../assets/images/'+ source.id +'.png)'}" class="example-header-image"></div>
+        <div mat-card-avatar [ngStyle]="{'background-image':' url(../assets/images/'+ source.id +'.png)'}" class="example-header-image"></div>
         <span class="source-name"> {{source.name}}</span>
       </mat-list-item>
     </mat-list>
@@ -46,4 +56,3 @@
     </mat-card-actions>
   </mat-card>
 </mat-sidenav-container>
-

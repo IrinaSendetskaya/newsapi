@@ -22,9 +22,20 @@ export class AppComponent {
         this.newsapi.initSources().subscribe(data => this.mSources = data[('sources')]);
     }
 
-
     searchArticles(source) {
         console.log('selected source is: ' + source);
         this.newsapi.getArticlesByID(source).subscribe(data => this.mArticles = data[('articles')]);
+    }
+    searchArticlesPopular() {
+        this.newsapi.getArticlesPopular().subscribe(data => this.mArticles = data[('articles')]);
+    }
+
+    searchArticlesDate() {
+        this.newsapi.getArticlesDate().subscribe(data => this.mArticles = data[('articles')]);
+    }
+
+    searchArticlesByWord(inputWord) {
+        console.log('selected word is: ' + inputWord);
+        this.newsapi.getArticlesByWord(inputWord).subscribe(data => this.mArticles = data[('articles')]);
     }
 }
